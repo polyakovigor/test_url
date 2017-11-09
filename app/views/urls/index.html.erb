@@ -1,0 +1,19 @@
+<div class="jumbotron">
+  <%= form_for @url, html: {class: 'form-group'} do |f| %>
+      <% if @url.errors.any? %>
+          <div id="error_explanation">
+            <div class="alert alert-danger alert-dismissable">
+              <ul>
+                <a href="#" class="close" data-dismiss="alert" aria-label="close">×</a>
+                <% @url.errors.full_messages.each do |message| %>
+                    <li><%= message %></li>
+                <% end %>
+              </ul>
+            </div>
+          </div>
+      <% end %>
+      <%= f.text_field :original_url, placeholder: 'Enter the URL you want to shorten...', class: 'form-control' %>
+      <br>
+      <%= f.submit 'Shorten!', class: 'btn btn-primary' %>
+  <% end %>
+</div>

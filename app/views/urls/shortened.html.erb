@@ -1,0 +1,10 @@
+<div class="jumbotron">
+  <h3 class="text-center">Your link has been shortened!</h3>
+  <label class="string disabled control-label" for="url_original_url"> Your original URL was:</label>
+  <input class="string disabled form-control" disabled="disabled" id="url_original_url" value="<%= "#{@url.original_url}" %>">
+  <br>
+  <div class="panel text-center">
+    <label>Your shortened URL is:</label>
+    <%= "#{request.base_url}/#{@url.short_url}" %>
+  </div>
+</div>
